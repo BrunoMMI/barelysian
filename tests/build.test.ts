@@ -133,3 +133,12 @@ describe("menu", () => {
     expect(caffetteria?.textContent).toContain("1.10€");
   });
 });
+
+describe("footer", () => {
+  it("shows the payoff and a copyright line with the current year", () => {
+    const footerText = document.querySelector("footer")?.textContent ?? "";
+    expect(footerText).toContain("Sorsi di Poesia");
+    expect(footerText).toContain(String(new Date().getFullYear()));
+    expect(footerText).toContain("Elysian");
+  });
+});
