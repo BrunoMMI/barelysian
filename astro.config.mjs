@@ -4,9 +4,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://www.elysiamsorsidipoesia.it",
   integrations: [sitemap()],
-  vite: {
-    build: {
-      assetsInlineLimit: 0,
-    },
+  build: {
+    inlineStylesheets: "never",
   },
 });
