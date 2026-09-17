@@ -1,0 +1,22 @@
+{
+  "name": "elysian-landing",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "astro": "^7.3.3",
+    "@astrojs/sitemap": "^3.7.4"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.1",
+    "linkedom": "^0.18.13",
+    "mupdf": "^1.28.1",
+    "sharp": "^0.35.4"
+  }
+}
