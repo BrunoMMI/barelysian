@@ -81,3 +81,55 @@ describe("hero", () => {
     expect(cta?.textContent).toContain("menù");
   });
 });
+
+describe("menu", () => {
+  it("renders a heading and section for every category", () => {
+    for (const id of [
+      "caffetteria",
+      "bibite",
+      "drink-list",
+      "birre-e-liquori",
+      "wine-selection",
+      "gelati",
+    ]) {
+      const section = document.querySelector(`#${id}`);
+      expect(section, `expected a #${id} section`).not.toBeNull();
+      expect(section?.querySelector("h2")).not.toBeNull();
+    }
+  });
+
+  it("renders the exact number of items transcribed from the paper menu", () => {
+    const expectedCounts: Record<string, number> = {
+      caffetteria: 31,
+      bibite: 21,
+      "drink-list": 23,
+      "birre-e-liquori": 43,
+      "wine-selection": 7,
+      gelati: 4,
+    };
+    for (const [id, count] of Object.entries(expectedCounts)) {
+      const section = document.querySelector(`#${id}`);
+      const rows = section?.querySelectorAll(".menu-list__row") ?? [];
+      expect(rows.length, `expected ${count} items in #${id}`).toBe(count);
+    }
+  });
+
+  it("shows named subgroup headings for Drink List and Birre e Liquori", () => {
+    const drinkList = document.querySelector("#drink-list");
+    const subheadings = Array.from(drinkList?.querySelectorAll("h3") ?? []).map(
+      (el) => el.textContent,
+    );
+    expect(subheadings).toEqual(["Spritz", "Classici", "Gin Tonic / Lemon", "Signature Tonic"]);
+  });
+
+  it("shows the gelato flavor note", () => {
+    const gelati = document.querySelector("#gelati");
+    expect(gelati?.textContent).toContain("Tiramisù");
+  });
+
+  it("shows a specific known price verbatim", () => {
+    const caffetteria = document.querySelector("#caffetteria");
+    expect(caffetteria?.textContent).toContain("Caffè espresso");
+    expect(caffetteria?.textContent).toContain("1.10€");
+  });
+});

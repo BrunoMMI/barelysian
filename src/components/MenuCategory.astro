@@ -1,0 +1,116 @@
+---
+import type { MenuCategoryData } from "../data/menu";
+
+interface Props {
+  category: MenuCategoryData;
+}
+
+const { category } = Astro.props;
+---
+<section id={category.id} class="menu-category">
+  <h2>{category.title}</h2>
+  {category.subgroups.map((subgroup) => (
+    <div class="menu-subgroup">
+      {subgroup.title && <h3>{subgroup.title}</h3>}
+      {subgroup.note && <p class="menu-subgroup__note">{subgroup.note}</p>}
+      <dl class="menu-list">
+        {subgroup.items.map((item) => (
+          <div class="menu-list__row">
+            <dt>
+              {item.name}
+              {item.description && <span class="menu-list__desc">{item.description}</span>}
+            </dt>
+            <dd>{item.price}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  ))}
+</section>
+
+<style>
+  .menu-category {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding: 3rem 1.25rem;
+    scroll-margin-top: 4.5rem;
+  }
+
+  .menu-category h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    border-bottom: 1px solid var(--color-gold);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .menu-subgroup + .menu-subgroup {
+    margin-top: 2rem;
+  }
+
+  .menu-subgroup h3 {
+    font-size: 1.25rem;
+    color: var(--color-sage);
+    margin-bottom: 0.75rem;
+  }
+
+  .menu-subgroup__note {
+    font-style: italic;
+    color: var(--color-ink);
+    opacity: 0.75;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .menu-list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .menu-list__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px dotted var(--color-gold-soft);
+    padding-bottom: 0.5rem;
+  }
+
+  .menu-list__row dt {
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .menu-list__row dd {
+    margin: 0;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .menu-list__desc {
+    display: block;
+    font-weight: 400;
+    font-size: 0.9rem;
+    opacity: 0.75;
+  }
+
+  @media (max-width: 30rem) {
+    .menu-list__row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.15rem;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .menu-list {
+      columns: 2;
+      column-gap: 2.5rem;
+    }
+
+    .menu-list__row {
+      break-inside: avoid;
+    }
+  }
+</style>

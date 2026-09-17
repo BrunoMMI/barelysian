@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import MenuCategory from "../components/MenuCategory.astro";
+import { menuCategories } from "../data/menu";
 ---
 <!doctype html>
 <html lang="it">
@@ -13,6 +15,11 @@ import Hero from "../components/Hero.astro";
     <Header />
     <main id="main-content">
       <Hero />
+      <div id="menu">
+        {menuCategories.map((category) => (
+          <MenuCategory category={category} />
+        ))}
+      </div>
     </main>
   </body>
 </html>
