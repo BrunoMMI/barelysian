@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "vitest";
 import { execSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { parseHTML } from "linkedom";
 
 let document: Document;
@@ -29,5 +29,15 @@ describe("sitemap generation", () => {
   it("produces a sitemap index file", () => {
     const sitemap = readFileSync("dist/sitemap-index.xml", "utf-8");
     expect(sitemap).toContain("sitemap-0.xml");
+  });
+});
+
+describe("design tokens", () => {
+  it("ships a stylesheet defining the core color tokens", () => {
+    const cssFiles = readdirSync("dist/_astro").filter((f) => f.endsWith(".css"));
+    const allCss = cssFiles.map((f) => readFileSync(`dist/_astro/${f}`, "utf-8")).join("\n");
+    expect(allCss).toContain("--color-ink");
+    expect(allCss).toContain("--color-cream");
+    expect(allCss).toContain("prefers-reduced-motion");
   });
 });
