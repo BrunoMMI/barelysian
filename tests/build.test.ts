@@ -41,3 +41,29 @@ describe("design tokens", () => {
     expect(allCss).toContain("prefers-reduced-motion");
   });
 });
+
+describe("header", () => {
+  it("renders the logo with brand-name alt text", () => {
+    const logoImg = document.querySelector("header img");
+    expect(logoImg?.getAttribute("alt")).toContain("Elysian");
+  });
+
+  it("has a skip link to the main content", () => {
+    const skipLink = document.querySelector('a[href="#main-content"]');
+    expect(skipLink).not.toBeNull();
+  });
+
+  it("links to every menu category anchor", () => {
+    const navLinks = Array.from(document.querySelectorAll('nav[aria-label] a')).map((a) =>
+      a.getAttribute("href"),
+    );
+    expect(navLinks).toEqual([
+      "#caffetteria",
+      "#bibite",
+      "#drink-list",
+      "#birre-e-liquori",
+      "#wine-selection",
+      "#gelati",
+    ]);
+  });
+});

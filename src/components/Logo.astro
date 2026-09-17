@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import logoSource from "../assets/logo-source.png";
+
+interface Props {
+  width: number;
+  class?: string;
+  loading?: "eager" | "lazy";
+}
+
+const { width, class: className, loading = "lazy" } = Astro.props;
+const height = Math.round((width * logoSource.height) / logoSource.width);
+---
+<Image
+  src={logoSource}
+  alt="Elysian – Sorsi di Poesia"
+  width={width}
+  height={height}
+  class={className}
+  loading={loading}
+/>

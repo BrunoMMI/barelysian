@@ -1,0 +1,106 @@
+---
+import Logo from "./Logo.astro";
+import { menuCategories } from "../data/menu";
+---
+<header class="site-header">
+  <a class="skip-link" href="#main-content">Vai al contenuto</a>
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="#" aria-label="Elysian, torna in cima">
+      <Logo width={48} loading="eager" />
+      <span class="site-header__brand-name">Elysian</span>
+    </a>
+    <nav class="site-header__nav" aria-label="Categorie menu">
+      <ul>
+        {menuCategories.map((category) => (
+          <li>
+            <a href={`#${category.id}`}>{category.title}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-cream);
+    border-bottom: 1px solid var(--color-gold-soft);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--color-ink);
+    color: var(--color-cream);
+    padding: 0.75rem 1rem;
+    z-index: 100;
+  }
+
+  .skip-link:focus {
+    left: 0.5rem;
+    top: 0.5rem;
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+  }
+
+  .site-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--color-ink);
+    flex-shrink: 0;
+  }
+
+  .site-header__brand-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .site-header__nav {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .site-header__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-header__nav ul {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-header__nav a {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0.5rem 0.9rem;
+    min-height: 44px;
+    border-radius: 999px;
+    border: 1px solid var(--color-gold-soft);
+    color: var(--color-ink);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .site-header__nav a:hover,
+  .site-header__nav a:focus-visible {
+    background: var(--color-gold-soft);
+  }
+</style>
