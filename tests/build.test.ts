@@ -67,3 +67,17 @@ describe("header", () => {
     ]);
   });
 });
+
+describe("hero", () => {
+  it("shows the brand name, payoff, and drink-and-poetry line", () => {
+    const heroText = document.querySelector(".hero")?.textContent ?? "";
+    expect(heroText).toContain("Elysian");
+    expect(heroText).toContain("Sorsi di Poesia");
+    expect(heroText).toContain("Drink and Poetry Café");
+  });
+
+  it("has a CTA linking to the menu", () => {
+    const cta = document.querySelector('.hero a[href="#menu"]');
+    expect(cta?.textContent).toContain("menù");
+  });
+});
