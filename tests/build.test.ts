@@ -142,3 +142,37 @@ describe("footer", () => {
     expect(footerText).toContain("Elysian");
   });
 });
+
+describe("SEO head", () => {
+  it("has a meta description and canonical link", () => {
+    expect(document.querySelector('meta[name="description"]')?.getAttribute("content")).toMatch(
+      /Elysian/,
+    );
+    expect(document.querySelector('link[rel="canonical"]')?.getAttribute("href")).toBe(
+      "https://www.elysiamsorsidipoesia.it/",
+    );
+  });
+
+  it("has Open Graph and Twitter card tags", () => {
+    expect(document.querySelector('meta[property="og:title"]')).not.toBeNull();
+    expect(document.querySelector('meta[property="og:image"]')?.getAttribute("content")).toMatch(
+      /og-image\.png$/,
+    );
+    expect(document.querySelector('meta[name="twitter:card"]')?.getAttribute("content")).toBe(
+      "summary_large_image",
+    );
+  });
+
+  it("has favicon links", () => {
+    expect(document.querySelector('link[rel="icon"]')).not.toBeNull();
+    expect(document.querySelector('link[rel="apple-touch-icon"]')).not.toBeNull();
+  });
+
+  it("embeds valid schema.org Menu JSON-LD matching the rendered menu", () => {
+    const script = document.querySelector('script[type="application/ld+json"]');
+    expect(script).not.toBeNull();
+    const jsonld = JSON.parse(script!.textContent ?? "{}");
+    expect(jsonld["@type"]).toBe("Menu");
+    expect(jsonld.hasMenuSection).toHaveLength(6);
+  });
+});
