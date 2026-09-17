@@ -105,12 +105,14 @@ const { category } = Astro.props;
 
   @media (min-width: 48rem) {
     .menu-list {
+      display: block;
       columns: 2;
       column-gap: 2.5rem;
     }
 
     .menu-list__row {
       break-inside: avoid;
+      margin-bottom: 0.9rem;
     }
   }
 </style>

@@ -3,7 +3,7 @@ import Logo from "./Logo.astro";
 ---
 <section class="hero">
   <div class="hero__inner">
-    <Logo width={140} loading="eager" class="hero__logo" />
+    <Logo width={140} loading="eager" class="hero__logo" alt="" />
     <p class="hero__eyebrow">Drink and Poetry Café</p>
     <h1 class="hero__title">Elysian</h1>
     <p class="hero__payoff">Sorsi di Poesia</p>
@@ -67,7 +67,7 @@ import Logo from "./Logo.astro";
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-size: 0.8rem;
-    color: var(--color-sage);
+    color: var(--color-sage-text);
     margin: 0 0 0.5rem;
   }
 
@@ -78,9 +78,8 @@ import Logo from "./Logo.astro";
 
   .hero__payoff {
     font-family: var(--font-display);
-    font-style: italic;
     font-size: clamp(1.1rem, 3vw, 1.5rem);
-    color: var(--color-gold);
+    color: var(--color-gold-text);
     margin: 0.25rem 0 1.5rem;
   }
 
@@ -107,7 +106,7 @@ import Logo from "./Logo.astro";
 
   .hero__cta:hover,
   .hero__cta:focus-visible {
-    background: var(--color-gold);
+    background: var(--color-gold-text);
     transform: translateY(-2px);
   }
 </style>
