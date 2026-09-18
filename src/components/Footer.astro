@@ -3,7 +3,9 @@ import Logo from "./Logo.astro";
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
-  <Logo width={56} alt="" />
+  <div class="site-footer__logo">
+    <Logo width={56} alt="" />
+  </div>
   <p class="site-footer__payoff">Sorsi di Poesia</p>
   <p class="site-footer__copy">&copy; {year} Elysian</p>
 </footer>
@@ -13,6 +15,10 @@ const year = new Date().getFullYear();
     text-align: center;
     padding: 3rem 1.25rem 2.5rem;
     border-top: 1px solid var(--color-gold-soft);
+  }
+
+  .site-footer__logo {
+    display: inline-block;
   }
 
   .site-footer__payoff {
