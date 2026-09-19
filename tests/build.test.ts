@@ -91,7 +91,7 @@ describe("aperitivo note", () => {
     expect(note).toContain("patatine");
     expect(note).toContain("rustici");
     expect(note).toContain("olive");
-    expect(note).toContain("tacos");
+    expect(note).toContain("Tortilla");
   });
 });
 
