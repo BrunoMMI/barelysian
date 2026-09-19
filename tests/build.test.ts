@@ -63,6 +63,7 @@ describe("header", () => {
       "#drink-list",
       "#birre-e-liquori",
       "#wine-selection",
+      "#spumanti-e-champagne",
       "#gelati",
     ]);
   });
@@ -90,6 +91,7 @@ describe("menu", () => {
       "drink-list",
       "birre-e-liquori",
       "wine-selection",
+      "spumanti-e-champagne",
       "gelati",
     ]) {
       const section = document.querySelector(`#${id}`);
@@ -104,7 +106,8 @@ describe("menu", () => {
       bibite: 23,
       "drink-list": 28,
       "birre-e-liquori": 47,
-      "wine-selection": 7,
+      "wine-selection": 11,
+      "spumanti-e-champagne": 3,
       gelati: 5,
     };
     for (const [id, count] of Object.entries(expectedCounts)) {
@@ -173,6 +176,6 @@ describe("SEO head", () => {
     expect(script).not.toBeNull();
     const jsonld = JSON.parse(script!.textContent ?? "{}");
     expect(jsonld["@type"]).toBe("Menu");
-    expect(jsonld.hasMenuSection).toHaveLength(6);
+    expect(jsonld.hasMenuSection).toHaveLength(7);
   });
 });

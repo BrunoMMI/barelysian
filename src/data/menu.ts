@@ -290,6 +290,52 @@ export const menuCategories: MenuCategoryData[] = [
             price: "20€",
             description: "Cantalici — Toscana — 100% Sangiovese",
           },
+          {
+            name: "Elena Walch Chardonnay Alto Adige DOC",
+            price: "28€ (bottiglia) / 5€ (calice)",
+            description: "Elena Walch — Alto Adige — 100% Chardonnay",
+          },
+          {
+            name: "Pitars Venezia Giulia Ribolla Gialla",
+            price: "18€ (bottiglia) / 5€ (calice)",
+            description: "Pitars — Friuli-Venezia Giulia — 100% Ribolla Gialla",
+          },
+          {
+            name: "Serena Cabernet Veneto IGT",
+            price: "18€ (bottiglia) / 5€ (calice)",
+            description: "Serena — Veneto — 100% Cabernet",
+          },
+          {
+            name: "Bertani Valpolicella Valpantena",
+            price: "18€ (bottiglia) / 5€ (calice)",
+            description: "Bertani — Veneto — 80% Corvina Veronese, 20% Rondinella",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "spumanti-e-champagne",
+    title: "Spumanti e Champagne",
+    subgroups: [
+      {
+        items: [
+          {
+            name: "Ferrari Maximum Blanc de Blancs",
+            price: "35€",
+            description: "Ferrari — Trentino — 100% Chardonnay",
+          },
+          {
+            name: "Prosecco Serena DOC Treviso",
+            price: "25€",
+            description: "Serena — Veneto — 85% Glera",
+          },
+          {
+            name: "Moët & Chandon Champagne Réserve Impériale",
+            price: "85€",
+            description:
+              "Moët & Chandon — Francia — 40% Pinot Noir, 30% Pinot Meunier, 30% Chardonnay",
+          },
         ],
       },
     ],
