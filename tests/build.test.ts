@@ -65,6 +65,7 @@ describe("header", () => {
       "#wine-selection",
       "#spumanti-e-champagne",
       "#gelati",
+      "#stuzzicheria-e-aperitivi",
     ]);
   });
 });
@@ -104,6 +105,7 @@ describe("menu", () => {
       "wine-selection",
       "spumanti-e-champagne",
       "gelati",
+      "stuzzicheria-e-aperitivi",
     ]) {
       const section = document.querySelector(`#${id}`);
       expect(section, `expected a #${id} section`).not.toBeNull();
@@ -120,6 +122,7 @@ describe("menu", () => {
       "wine-selection": 11,
       "spumanti-e-champagne": 3,
       gelati: 5,
+      "stuzzicheria-e-aperitivi": 3,
     };
     for (const [id, count] of Object.entries(expectedCounts)) {
       const section = document.querySelector(`#${id}`);
@@ -155,6 +158,11 @@ describe("footer", () => {
     expect(footerText).toContain(String(new Date().getFullYear()));
     expect(footerText).toContain("Elysian");
   });
+
+  it("notes that the menu is continuously updated", () => {
+    const footerText = document.querySelector("footer")?.textContent ?? "";
+    expect(footerText).toContain("continuo aggiornamento");
+  });
 });
 
 describe("SEO head", () => {
@@ -187,6 +195,6 @@ describe("SEO head", () => {
     expect(script).not.toBeNull();
     const jsonld = JSON.parse(script!.textContent ?? "{}");
     expect(jsonld["@type"]).toBe("Menu");
-    expect(jsonld.hasMenuSection).toHaveLength(7);
+    expect(jsonld.hasMenuSection).toHaveLength(8);
   });
 });

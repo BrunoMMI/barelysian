@@ -361,4 +361,17 @@ export const menuCategories: MenuCategoryData[] = [
       },
     ],
   },
+  {
+    id: "stuzzicheria-e-aperitivi",
+    title: "Stuzzicheria e Aperitivi",
+    subgroups: [
+      {
+        items: [
+          { name: "Pizzetta Margherita", price: "2.00€" },
+          { name: "Pizzetta Wurstel e patatine", price: "2.00€" },
+          { name: "Hot Dog", price: "2.00€" },
+        ],
+      },
+    ],
+  },
 ];
