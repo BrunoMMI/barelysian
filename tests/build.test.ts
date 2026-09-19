@@ -139,6 +139,14 @@ describe("menu", () => {
     expect(subheadings).toEqual(["Spritz", "Classici", "Gin Tonic / Lemon", "Signature Tonic"]);
   });
 
+  it("shows Bianchi/Rossi/Rosati subgroup headings for Wine Selection", () => {
+    const wineSelection = document.querySelector("#wine-selection");
+    const subheadings = Array.from(wineSelection?.querySelectorAll("h3") ?? []).map(
+      (el) => el.textContent,
+    );
+    expect(subheadings).toEqual(["Vini Bianchi", "Vini Rossi", "Vini Rosati"]);
+  });
+
   it("shows the gelato flavor note", () => {
     const gelati = document.querySelector("#gelati");
     expect(gelati?.textContent).toContain("Tiramisù");

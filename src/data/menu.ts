@@ -57,7 +57,7 @@ export const menuCategories: MenuCategoryData[] = [
             name: "Cornetti Tre Marie",
             price: "1.50€",
             description:
-              "Treccia noci e miele, conchiglia panna, latte e amarena, stracciatella, fagottina tiramisù",
+              "Treccia noci e miele, conchiglia latte e amarena, stracciatella, fagottino tiramisù",
           },
           { name: "Cornetto Nutella", price: "1.50€" },
           { name: "Polacca Aversana Crema e Amarena", price: "1.50€" },
@@ -100,7 +100,11 @@ export const menuCategories: MenuCategoryData[] = [
           { name: "Tassoni pompelmo rosa", price: "2.50€" },
           { name: "Coca-Cola lattina", price: "2.00€" },
           { name: "Coca-Cola Zero lattina", price: "2.00€" },
-          { name: "Pepsi lattina", price: "2.00€", description: "Classica, lime zero e limone" },
+          {
+            name: "Pepsi lattina",
+            price: "2.00€",
+            description: "Classica, zero, lime zero e limone",
+          },
           { name: "Sprite lattina", price: "2.00€" },
           { name: "Coca-Cola bottiglia PET", price: "2.50€", description: "Classica, zero" },
           { name: "Coca-Cola vetro", price: "3.00€", description: "Classica, zero" },
@@ -143,7 +147,7 @@ export const menuCategories: MenuCategoryData[] = [
         items: [
           { name: "Negroni", price: "7€" },
           { name: "Mi-To", price: "7€" },
-          { name: "Negroni sbagliato", price: "7€", description: "Base Gin Mare" },
+          { name: "Negroni sbagliato", price: "7€" },
           { name: "Americano", price: "7€" },
           { name: "Moscow Mule", price: "7€" },
           { name: "Malibu Sunrise", price: "7€" },
@@ -254,6 +258,7 @@ export const menuCategories: MenuCategoryData[] = [
     title: "Wine Selection",
     subgroups: [
       {
+        title: "Vini Bianchi",
         items: [
           {
             name: "Traminer Aromatico",
@@ -271,6 +276,21 @@ export const menuCategories: MenuCategoryData[] = [
             description: "Reine Pédauque — Francia — 100% Chardonnay",
           },
           {
+            name: "Elena Walch Chardonnay Alto Adige DOC",
+            price: "18€ (bottiglia) / 5€ (calice)",
+            description: "Elena Walch — Alto Adige — 100% Chardonnay",
+          },
+          {
+            name: "Pitars Venezia Giulia Ribolla Gialla",
+            price: "18€ (bottiglia) / 5€ (calice)",
+            description: "Pitars — Friuli-Venezia Giulia — 100% Ribolla Gialla",
+          },
+        ],
+      },
+      {
+        title: "Vini Rossi",
+        items: [
+          {
             name: "Bullorosso Campania IGP",
             price: "20€",
             description: "Vitialte — Campania — 70% Aglianico, 30% Montepulciano",
@@ -286,21 +306,6 @@ export const menuCategories: MenuCategoryData[] = [
             description: "Podere 29 — Puglia — 100% Nero di Troia",
           },
           {
-            name: "Petali IGT Toscano Rosato",
-            price: "20€",
-            description: "Cantalici — Toscana — 100% Sangiovese",
-          },
-          {
-            name: "Elena Walch Chardonnay Alto Adige DOC",
-            price: "28€ (bottiglia) / 5€ (calice)",
-            description: "Elena Walch — Alto Adige — 100% Chardonnay",
-          },
-          {
-            name: "Pitars Venezia Giulia Ribolla Gialla",
-            price: "18€ (bottiglia) / 5€ (calice)",
-            description: "Pitars — Friuli-Venezia Giulia — 100% Ribolla Gialla",
-          },
-          {
             name: "Serena Cabernet Veneto IGT",
             price: "18€ (bottiglia) / 5€ (calice)",
             description: "Serena — Veneto — 100% Cabernet",
@@ -309,6 +314,16 @@ export const menuCategories: MenuCategoryData[] = [
             name: "Bertani Valpolicella Valpantena",
             price: "18€ (bottiglia) / 5€ (calice)",
             description: "Bertani — Veneto — 80% Corvina Veronese, 20% Rondinella",
+          },
+        ],
+      },
+      {
+        title: "Vini Rosati",
+        items: [
+          {
+            name: "Petali IGT Toscano Rosato",
+            price: "20€",
+            description: "Cantalici — Toscana — 100% Sangiovese",
           },
         ],
       },
