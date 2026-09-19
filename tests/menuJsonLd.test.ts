@@ -18,7 +18,7 @@ describe("buildMenuJsonLd", () => {
     const jsonld = buildMenuJsonLd(menuCategories) as any;
     const drinkList = jsonld.hasMenuSection.find((s: any) => s.name === "Drink List");
     const spritz = drinkList.hasMenuSection.find((s: any) => s.name === "Spritz");
-    expect(spritz.hasMenuItem).toHaveLength(8);
+    expect(spritz.hasMenuItem).toHaveLength(10);
     expect(spritz.hasMenuItem[0].offers.price).toBe(5);
     expect(spritz.hasMenuItem[0].offers.priceCurrency).toBe("EUR");
   });
@@ -32,7 +32,7 @@ describe("buildMenuJsonLd", () => {
 
   it("carries a subgroup note as the nested section's description", () => {
     const jsonld = buildMenuJsonLd(menuCategories) as any;
-    const gelati = jsonld.hasMenuSection.find((s: any) => s.name === "Gelati");
+    const gelati = jsonld.hasMenuSection.find((s: any) => s.name === "Gelati e Frappè");
     expect(gelati.hasMenuItem.some((item: any) => item.name.startsWith("Cono"))).toBe(true);
   });
 });

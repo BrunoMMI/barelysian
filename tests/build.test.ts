@@ -100,12 +100,12 @@ describe("menu", () => {
 
   it("renders the exact number of items transcribed from the paper menu", () => {
     const expectedCounts: Record<string, number> = {
-      caffetteria: 31,
-      bibite: 21,
-      "drink-list": 23,
-      "birre-e-liquori": 43,
+      caffetteria: 36,
+      bibite: 23,
+      "drink-list": 28,
+      "birre-e-liquori": 47,
       "wine-selection": 7,
-      gelati: 4,
+      gelati: 5,
     };
     for (const [id, count] of Object.entries(expectedCounts)) {
       const section = document.querySelector(`#${id}`);
