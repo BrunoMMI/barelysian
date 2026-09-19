@@ -83,6 +83,17 @@ describe("hero", () => {
   });
 });
 
+describe("aperitivo note", () => {
+  it("explains what's included with soft drinks/beers vs alcoholic drinks", () => {
+    const note = document.querySelector(".aperitivo-note")?.textContent ?? "";
+    expect(note).toContain("noccioline");
+    expect(note).toContain("patatine");
+    expect(note).toContain("rustici");
+    expect(note).toContain("olive");
+    expect(note).toContain("tacos");
+  });
+});
+
 describe("menu", () => {
   it("renders a heading and section for every category", () => {
     for (const id of [
