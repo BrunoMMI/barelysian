@@ -171,7 +171,7 @@ describe("SEO head", () => {
       /Elysian/,
     );
     expect(document.querySelector('link[rel="canonical"]')?.getAttribute("href")).toBe(
-      "https://www.elysiamsorsidipoesia.it/",
+      "https://caffetteriaelysian.shop/",
     );
   });
 
