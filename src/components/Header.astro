@@ -6,7 +6,7 @@ import { menuCategories } from "../data/menu";
   <a class="skip-link" href="#main-content">Vai al contenuto</a>
   <div class="site-header__inner">
     <a class="site-header__brand" href="#" aria-label="Elysian, torna in cima">
-      <Logo width={48} loading="eager" />
+      <Logo width={48} loading="eager" variant="light" />
       <span class="site-header__brand-name">Elysian</span>
     </a>
     <nav class="site-header__nav" aria-label="Categorie menu">
@@ -26,7 +26,7 @@ import { menuCategories } from "../data/menu";
     position: sticky;
     top: 0;
     z-index: 10;
-    background: var(--color-cream);
+    background: var(--color-teal);
     border-bottom: 1px solid var(--color-gold-soft);
   }
 
@@ -59,7 +59,7 @@ import { menuCategories } from "../data/menu";
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
-    color: var(--color-ink);
+    color: var(--color-cream);
     flex-shrink: 0;
   }
 
@@ -94,7 +94,7 @@ import { menuCategories } from "../data/menu";
     min-height: 44px;
     border-radius: 999px;
     border: 1px solid var(--color-gold-soft);
-    color: var(--color-ink);
+    color: var(--color-cream);
     text-decoration: none;
     font-size: 0.9rem;
   }
@@ -102,5 +102,6 @@ import { menuCategories } from "../data/menu";
   .site-header__nav a:hover,
   .site-header__nav a:focus-visible {
     background: var(--color-gold-soft);
+    color: var(--color-ink);
   }
 </style>

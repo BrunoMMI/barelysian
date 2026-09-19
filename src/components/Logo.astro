@@ -7,6 +7,7 @@ interface Props {
   class?: string;
   loading?: "eager" | "lazy";
   alt?: string;
+  variant?: "dark" | "light";
 }
 
 const {
@@ -14,8 +15,12 @@ const {
   class: className,
   loading = "lazy",
   alt = "Elysian – Sorsi di Poesia",
+  variant = "dark",
 } = Astro.props;
 const height = Math.round((width * logoSource.height) / logoSource.width);
+const classes = [className, variant === "light" ? "logo--light" : undefined]
+  .filter(Boolean)
+  .join(" ");
 ---
 <Image
   src={logoSource}
@@ -23,6 +28,12 @@ const height = Math.round((width * logoSource.height) / logoSource.width);
   width={width}
   height={height}
   densities={[1, 2]}
-  class={className}
+  class={classes || undefined}
   loading={loading}
 />
+
+<style>
+  .logo--light {
+    filter: brightness(0) invert(1);
+  }
+</style>

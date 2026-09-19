@@ -24,9 +24,11 @@
   --color-gold: #b08d57;
   --color-gold-soft: #e4d9c3;
   --color-gold-text: #856835;
+  --color-gold-on-teal: #d9b170;
   --color-sage-text: #5c6852;
   --color-sage: #7c8b6f;
-  --color-tile-blue: #3a5a78;
+  --color-teal: #1e4b4f;
+  --color-teal-soft: #dde9e8;
 
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
@@ -62,7 +64,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-cream);
+  background-color: var(--color-cream);
+  background-image: url("/leaf-pattern.svg");
+  background-repeat: repeat;
+  background-size: 160px 160px;
   color: var(--color-ink);
   font-family: var(--font-body);
   line-height: 1.5;
@@ -88,6 +93,6 @@ img {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-tile-blue);
+  outline: 3px solid var(--color-teal);
   outline-offset: 2px;
 }

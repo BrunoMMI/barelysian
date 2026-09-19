@@ -4,7 +4,7 @@ const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
   <div class="site-footer__logo">
-    <Logo width={56} alt="" />
+    <Logo width={56} alt="" variant="light" />
   </div>
   <p class="site-footer__payoff">Sorsi di Poesia</p>
   <p class="site-footer__copy">&copy; {year} Elysian</p>
@@ -14,6 +14,8 @@ const year = new Date().getFullYear();
   .site-footer {
     text-align: center;
     padding: 3rem 1.25rem 2.5rem;
+    background: var(--color-teal);
+    color: var(--color-cream);
     border-top: 1px solid var(--color-gold-soft);
   }
 
@@ -23,7 +25,7 @@ const year = new Date().getFullYear();
 
   .site-footer__payoff {
     font-family: var(--font-display);
-    color: var(--color-gold-text);
+    color: var(--color-gold-on-teal);
     margin: 0.75rem 0 0.5rem;
   }
 
